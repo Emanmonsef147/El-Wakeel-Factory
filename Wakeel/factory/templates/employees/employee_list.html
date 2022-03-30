@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+ <div class="col-12">
+            <div class="card-header" style="background-color:#0B5ED7">
+                <a href="{% url 'employee_create' %}" class="btn btn-light" style="float:right">
+                    <i class="fas fa-plus"></i>Add New
+                </a>
+
+
+
+                <h2 style="color:white">Employee List</h2>
+             </div>
+             <br>
+            <table class="table table-striped">
+                <thead  style="background-color:#2072bb">
+                    <tr  class="col-10">
+                        <th>
+                            <input type="checkbox" name="check" id="check">
+                        </th>
+
+                        <th scope="col"style="color:white">Employee ID</th>
+                        <th scope="col"style="color:white">Employee Account ID</th>
+                        <th scope="col"style="color:white">Employee PID</th>
+                        <th scope="col"style="color:white">Employee Mobile</th>
+                        <th scope="col"style="color:white">Employee Address</th>
+                        <th scope="col"style="color:white">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employee_list %}
+                    <tr>
+                        <td scope="row">
+                            <input type="checkbox" name="check" id="check">
+                        </td>
+                        <td>{{employee.employee_job_id}}</td>
+                        <td>{{employee.user_account_id}}</td>
+                        <td>{{employee.employee_pid}}</td>
+                        <td>{{employee.employee_mobile}}</td>
+                        <td>{{employee.employee_address}}</td>
+                        <td>
+                            <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
+                                <i class="far fa-edit fa-lg"></i>
+                            </a>
+
+                            <a href="{% url 'employee_view' employee.id %}" class="btn text-secondary px-0">
+                                <i class="fas fa-eye fa-lg"></i>
+                            </a>
+
+                            <form action="{% url 'employee_delete' employee.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn">
+                                    <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+
+                                </button>
+                            </form>
+                        </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+    </table>
+</div>
+</div>
+</main>
+
+{% endblock content %}
+
+

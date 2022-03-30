@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+ <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+ <div class="col-12">
+        <div class="card-header" style="background-color:#0B5ED7">
+            <h2 style="color:white">Employee View</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Employee ID: </label>
+                    <input type="text" class="form-control" value="{{employee_view.employee_job_id}} " readonly>
+                </div>
+                <div class="col-md-4">
+                    <label>Employee Account ID:</label>
+                    <input type="text" class="form-control" value="{{employee_view.user_account_id}}" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label>Employee PID:</label>
+                    <input type="text" class="form-control" value="{{employee_view.employee_pid}}" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label>Employee Mobile: </label>
+                    <input type="text" class="form-control" value="{{employee_view.employee_mobile}}" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label>Employee Address: </label>
+                    <input type="text" class="form-control" value="{{employee_view.employee_address}}" readonly>
+                </div>
+
+
+
+
+
+
+
+</div>
+</main>
+
+{% endblock content %}

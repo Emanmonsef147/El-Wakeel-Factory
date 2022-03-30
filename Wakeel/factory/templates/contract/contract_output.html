@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract Output</title>
+</head>
+
+<style>
+    @page {
+        size: "A4";
+        margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+        @top-center {
+            content: "Company Name";
+        }
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+
+        }
+
+    }
+</style>
+
+<h2>Contract List</h2>
+<div class="table">
+    <thead class="thead">
+    <tr>
+        <th>Contract ID</th>
+        <th>Contract Status</th>
+        <th>Item Type</th>
+        <th>Item Details</th>
+        <th>No Items</th>
+        <th>Width</th>
+        <th>Height</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for contract_pdf in contract_pdf%}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{contract_pdf.contract_id}}</td>
+        <td>{{contract_pdf.contract_status}}</td>
+        <td>{{contract_pdf.item_type}}</td>
+        <td>{{contract_pdf.width}}</td>
+        <td>{{contract_pdf.height}}</td>
+        <td>{{contract_pdf.item_details}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</div>
+<body>
+
+</body>
+</html>

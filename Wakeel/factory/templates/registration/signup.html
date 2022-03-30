@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <div class="col-12">
+  <h2>Sign up for a free account</h2>
+  <p class="lead">Select below the type of account you want to create</p>
+  <a href="{% url 'sales_signup' %}" class="btn btn-student btn-lg" role="button">I'm a Sales</a>
+  <a href="{% url 'manager_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm a Manager</a>
+
+  </div>
+                </div>
+    </main>
+{% endblock %}

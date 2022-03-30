@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <div class="col-12">
+        <div class="card-header" style="background-color:#0B5ED7">
+            <h2 style="color:white">User Create</h2>
+        </div>
+            <div class="card-body">
+            </div>
+
+            <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table table-striped">
+{#                    <thead style="background-color:#2072bb">#}
+{#                    <tr>#}
+{#                        <th>#}
+{#                            <input type="checkbox" name="check" id="check">#}
+{#                        </th>#}
+{#                        <th scope="col" style="color:white">User Type</th>#}
+{#                        <th scope="col" style="color:white">User Email</th>#}
+{#                        <th scope="col" style="color:white">User Password</th>#}
+{#                        <th scope="col" style="color:white">Retype Password</th>#}
+{#                        <th scope="col" style="color:white">UserName</th>#}
+{##}
+{##}
+{#                    </tr>#}
+{#                    </thead>#}
+                    <tbody>
+
+
+                    <tr>
+                        <td scope="row">
+                            <input type="checkbox" name="check" id="check">
+                        </td>
+                        <td> {{form.user_type|as_crispy_field}}</td>
+                        <td>  {{form.user_email|as_crispy_field}}</td>
+                        <td>{{form.user_password|as_crispy_field}}</td>
+                        <td> {{form.re_type_password|as_crispy_field}}</td>
+                        <td>{{form.username|as_crispy_field}}</td>
+
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <br>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <i class="fa-solid fa-bookmark"></i>
+                            save
+                        </button>
+                        &nbsp;
+                        <a href="{% url 'user_list' %}" class="btn btn-primary btn-block btn-lg float_right"><i
+                                class="fa-solid fa-list"></i>
+
+                            Back to list</a>
+                    </div>
+            </form>
+
+
+        </div>
+                </div>
+</main>
+
+{% endblock content %}

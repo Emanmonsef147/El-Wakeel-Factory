@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proposal Output</title>
+</head>
+
+<style>
+    @page {
+        size: "A4";
+        margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+        @top-center {
+            content: "Company Name";
+        }
+        @bottom-right
+    {
+     content: "Page " counter(page) " of " counter(pages);
+
+    }
+
+    }
+</style>
+
+<h2>Proposal List</h2>
+<div class="table">
+    <thead class="thead">
+    <tr>
+        <th>Proposal ID</th>
+        <th>Proposal Amount</th>
+        <th>Proposal Status</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for proposal_pdf in proposal_pdf%}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{proposal_pdf.proposal_id}}</td>
+        <td>{{proposal_pdf.proposal_amount}}</td>
+        <td>{{proposal_pdf.proposal_status}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</div>
+<body>
+
+</body>
+</html>

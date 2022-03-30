@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+            <div class="col-12">
+                <div class="card-header" style="background-color:#0B5ED7">
+                    <h2 style="color:white">User View</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>User Type : </label>
+                            <input type="text" class="form-control" value="{{ user_view.user_type }}" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label>User Email :</label>
+                            <input type="text" class="form-control" value="{{ user_view.user_email }}" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label>User Password :</label>
+                            <input type="text" class="form-control" value="{{ user_view.user_password }}" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label>User Re-Type Password : </label>
+                            <input type="text" class="form-control" value="{{ user_view.re_type_password }}" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label>User Name : </label>
+                            <input type="text" class="form-control" value="{{ user_view.username }}" readonly>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+{% endblock content %}
+

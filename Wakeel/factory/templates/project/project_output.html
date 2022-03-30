@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Output</title>
+</head>
+
+<style>
+    @page {
+        size: "A4";
+        margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+        @top-center {
+            content: "Company Name";
+        }
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+
+        }
+
+    }
+</style>
+
+<h2>Project List</h2>
+<div class="table">
+    <thead class="thead">
+    <tr>
+        <th>Project ID</th>
+        <th>Contract ID</th>
+        <th>Project Status</th>
+        <th>Project Name</th>
+        <th>Item Type</th>
+        <th>Item Details</th>
+        <th>Width</th>
+        <th>Height</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for project_pdf in project_pdf %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{project_pdf.project_id}}</td>
+        <td>{{project_pdf.project_name}}</td>
+        <td>{{project_pdf.contract_id}}</td>
+        <td>{{project_pdf.project_status}}</td>
+        <td>{{project_pdf.item_type}}</td>
+        <td>{{project_pdf.item_details}}</td>
+        <td>{{project_pdf.width}}</td>
+        <td>{{project_pdf.height}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</div>
+<body>
+
+</body>
+</html>
